@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FCCDEA027FB28B000C9150B /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCDE9F27FB28B000C9150B /* CameraService.swift */; };
+		3FCCDEA227FB292800C9150B /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCDEA127FB292800C9150B /* AlbumService.swift */; };
 		3FF3CD0227DA196100FCBEA3 /* cocoboli_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3CD0127DA196100FCBEA3 /* cocoboli_iosApp.swift */; };
 		3FF3CD0427DA196100FCBEA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3CD0327DA196100FCBEA3 /* ContentView.swift */; };
 		3FF3CD0627DA196200FCBEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3CD0527DA196200FCBEA3 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FCCDE9F27FB28B000C9150B /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		3FCCDEA127FB292800C9150B /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
 		3FF3CCFE27DA196100FCBEA3 /* cocoboli.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocoboli.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF3CD0127DA196100FCBEA3 /* cocoboli_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocoboli_iosApp.swift; sourceTree = "<group>"; };
 		3FF3CD0327DA196100FCBEA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				3FF3CD0F27DA198700FCBEA3 /* WebView.swift */,
 				3FF3CD1127DA19B100FCBEA3 /* Constants.swift */,
 				3FF3CD1327DA19C200FCBEA3 /* LocationService.swift */,
+				3FCCDE9F27FB28B000C9150B /* CameraService.swift */,
+				3FCCDEA127FB292800C9150B /* AlbumService.swift */,
 			);
 			path = cocoboli.ios;
 			sourceTree = "<group>";
@@ -150,6 +156,8 @@
 			files = (
 				3FF3CD1027DA198700FCBEA3 /* WebView.swift in Sources */,
 				3FF3CD0427DA196100FCBEA3 /* ContentView.swift in Sources */,
+				3FCCDEA027FB28B000C9150B /* CameraService.swift in Sources */,
+				3FCCDEA227FB292800C9150B /* AlbumService.swift in Sources */,
 				3FF3CD1427DA19C200FCBEA3 /* LocationService.swift in Sources */,
 				3FF3CD0227DA196100FCBEA3 /* cocoboli_iosApp.swift in Sources */,
 				3FF3CD1227DA19B100FCBEA3 /* Constants.swift in Sources */,
@@ -281,7 +289,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"cocoboli.ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 8H98BAH7HL;
 				ENABLE_PREVIEWS = YES;
@@ -289,11 +297,14 @@
 				INFOPLIST_FILE = "cocoboli-ios-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "코코보리";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 및 일반 사진촬영을 위해 사진촬영 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자에게 알맞는 매장 및 서비스 정보를 제공하기 위해서는 위치정보가 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 등록, 카페 및 일반 정보 등록을 위해 앨범 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -305,7 +316,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"cocoboli.ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 8H98BAH7HL;
 				ENABLE_PREVIEWS = YES;
@@ -323,11 +334,14 @@
 				INFOPLIST_FILE = "cocoboli-ios-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "코코보리";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 및 일반 사진촬영을 위해 사진촬영 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자에게 알맞는 매장 및 서비스 정보를 제공하기 위해서는 위치정보가 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 등록, 카페 및 일반 정보 등록을 위해 앨범 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -339,7 +353,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

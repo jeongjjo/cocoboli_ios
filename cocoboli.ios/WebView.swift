@@ -50,7 +50,9 @@ struct WebView: UIViewRepresentable {
 
             self.webView?.evaluateJavaScript("currentLocation(\(stringData))")
         }
-
+        
+        CameraService().requestCameraAuthorization()
+        AlbumService().requestAlbumAuthorization()
     }
 
     /**
