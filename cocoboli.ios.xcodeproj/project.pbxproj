@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F782F4F280BCA4800B0D24E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F782F4E280BCA4800B0D24E /* ViewController.swift */; };
+		3F782F51280BCAF500B0D24E /* WebviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F782F50280BCAF500B0D24E /* WebviewController.swift */; };
+		3F782F53280BCC5200B0D24E /* WebviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F782F52280BCC5200B0D24E /* WebviewHandler.swift */; };
 		3FCCDEA027FB28B000C9150B /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCDE9F27FB28B000C9150B /* CameraService.swift */; };
 		3FCCDEA227FB292800C9150B /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCDEA127FB292800C9150B /* AlbumService.swift */; };
 		3FF3CD0227DA196100FCBEA3 /* cocoboli_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3CD0127DA196100FCBEA3 /* cocoboli_iosApp.swift */; };
 		3FF3CD0427DA196100FCBEA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3CD0327DA196100FCBEA3 /* ContentView.swift */; };
 		3FF3CD0627DA196200FCBEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3CD0527DA196200FCBEA3 /* Assets.xcassets */; };
 		3FF3CD0927DA196200FCBEA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3CD0827DA196200FCBEA3 /* Preview Assets.xcassets */; };
-		3FF3CD1027DA198700FCBEA3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3CD0F27DA198700FCBEA3 /* WebView.swift */; };
 		3FF3CD1227DA19B100FCBEA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3CD1127DA19B100FCBEA3 /* Constants.swift */; };
 		3FF3CD1427DA19C200FCBEA3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3CD1327DA19C200FCBEA3 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F782F4E280BCA4800B0D24E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		3F782F50280BCAF500B0D24E /* WebviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewController.swift; sourceTree = "<group>"; };
+		3F782F52280BCC5200B0D24E /* WebviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewHandler.swift; sourceTree = "<group>"; };
 		3FCCDE9F27FB28B000C9150B /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		3FCCDEA127FB292800C9150B /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
 		3FF3CCFE27DA196100FCBEA3 /* cocoboli.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocoboli.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,7 +31,6 @@
 		3FF3CD0327DA196100FCBEA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3FF3CD0527DA196200FCBEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FF3CD0827DA196200FCBEA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3FF3CD0F27DA198700FCBEA3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		3FF3CD1127DA19B100FCBEA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3FF3CD1327DA19C200FCBEA3 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		3FF3CD1527DA1BAC00FCBEA3 /* cocoboli-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "cocoboli-ios-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -67,11 +71,13 @@
 				3FF3CD0327DA196100FCBEA3 /* ContentView.swift */,
 				3FF3CD0527DA196200FCBEA3 /* Assets.xcassets */,
 				3FF3CD0727DA196200FCBEA3 /* Preview Content */,
-				3FF3CD0F27DA198700FCBEA3 /* WebView.swift */,
 				3FF3CD1127DA19B100FCBEA3 /* Constants.swift */,
 				3FF3CD1327DA19C200FCBEA3 /* LocationService.swift */,
 				3FCCDE9F27FB28B000C9150B /* CameraService.swift */,
 				3FCCDEA127FB292800C9150B /* AlbumService.swift */,
+				3F782F4E280BCA4800B0D24E /* ViewController.swift */,
+				3F782F50280BCAF500B0D24E /* WebviewController.swift */,
+				3F782F52280BCC5200B0D24E /* WebviewHandler.swift */,
 			);
 			path = cocoboli.ios;
 			sourceTree = "<group>";
@@ -154,12 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FF3CD1027DA198700FCBEA3 /* WebView.swift in Sources */,
 				3FF3CD0427DA196100FCBEA3 /* ContentView.swift in Sources */,
 				3FCCDEA027FB28B000C9150B /* CameraService.swift in Sources */,
 				3FCCDEA227FB292800C9150B /* AlbumService.swift in Sources */,
 				3FF3CD1427DA19C200FCBEA3 /* LocationService.swift in Sources */,
 				3FF3CD0227DA196100FCBEA3 /* cocoboli_iosApp.swift in Sources */,
+				3F782F53280BCC5200B0D24E /* WebviewHandler.swift in Sources */,
+				3F782F4F280BCA4800B0D24E /* ViewController.swift in Sources */,
+				3F782F51280BCAF500B0D24E /* WebviewController.swift in Sources */,
 				3FF3CD1227DA19B100FCBEA3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +297,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"cocoboli.ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 8H98BAH7HL;
 				ENABLE_PREVIEWS = YES;
@@ -307,6 +315,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,7 +335,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"cocoboli.ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 8H98BAH7HL;
 				ENABLE_PREVIEWS = YES;
@@ -344,6 +353,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

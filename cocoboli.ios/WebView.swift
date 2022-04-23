@@ -8,39 +8,29 @@
 import SwiftUI
 import WebKit
 import CoreLocation
+import os
 
 struct WebView: UIViewRepresentable {
-    
-    var url: String
-    var webView: WKWebView?
-    
-    let locationService = LocationService()
-    let webConfiguration = WKWebViewConfiguration()
-    let contentController = WKUserContentController()
-    
-    func makeUIView(context: Context) -> some UIView {
-        print("make ui view")
-
-        // 초기 실행시 트리거 되는 함수 설정
-        //let userScript = WKUserScript(source: "test()", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        //contentController.addUserScript(userScript)
-
-        webConfiguration.userContentController = contentController
-
-        let webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.scrollView.isScrollEnabled = false
-
-        guard let url = URL(string: self.url) else {
-            return webView
-        }
-        
-        webView.load(URLRequest(url: url))
-        
-        return webView
+            
+    func makeCoordinator() -> WebView.Coordinator {
+        return Coordinator()
     }
     
-    func updateUIView(_ uiView: UIViewType, context: Context) {
+    func makeUIView(context: Context) -> WKWebView {
+        print("make ui view")
+        
+        return self.createWebview(context: context)
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
         print("update ui view")
+        
+        let url = URL(string: Constants.MAIN_URL)
+        uiView.load(URLRequest(url: url!))
+        
+        let locationService = LocationService()
+        let cameraService = CameraService()
+        let albumService = AlbumService()
 
         locationService.requestLocation { coordinate in
             let lat         = coordinate.latitude.description
@@ -48,11 +38,11 @@ struct WebView: UIViewRepresentable {
             let position    = ["lat": lat, "lng": lng]
             let stringData  = self.objectToString(object: position)
 
-            self.webView?.evaluateJavaScript("currentLocation(\(stringData))")
+            uiView.evaluateJavaScript("currentLocation(\(stringData))")
         }
         
-        CameraService().requestCameraAuthorization()
-        AlbumService().requestAlbumAuthorization()
+        cameraService.requestCameraAuthorization()
+        albumService.requestAlbumAuthorization()
     }
 
     /**
@@ -64,10 +54,78 @@ struct WebView: UIViewRepresentable {
         let jsonData = try! JSONSerialization.data(withJSONObject: obj, options: [])
         return String(data: jsonData, encoding: .utf8)!
     }
+    
+    func createWebview(context: Context) -> WKWebView {
+        let webConfiguration = WKWebViewConfiguration()
+        let contentController = WKUserContentController()
+
+        webConfiguration.userContentController = contentController
+        webConfiguration.defaultWebpagePreferences.allowsContentJavaScript = true
+        webConfiguration.preferences.javaScriptCanOpenWindowsAutomatically = true
+        
+        let webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.allowsBackForwardNavigationGestures = true
+        webView.scrollView.isScrollEnabled = false
+        
+        webView.navigationDelegate = context.coordinator
+        webView.uiDelegate = context.coordinator
+
+        return webView
+    }
+    
+    class Coordinator:NSObject, WKUIDelegate, WKNavigationDelegate {
+        
+        func webView(
+            _ webView: WKWebView,
+            createWebViewWith configuration: WKWebViewConfiguration,
+            for navigationAction: WKNavigationAction,
+            windowFeatures: WKWindowFeatures
+        ) -> WKWebView?
+        {
+            os_log("[WebView] - call javascript open")
+            
+            if let url = navigationAction.request.url {
+                if url.absoluteString.count != 0 {
+                    os_log("[WebView] - open url | %d", url.description)
+                    UIApplication.shared.open(url, options: [:])
+                }
+            }
+            
+            return nil
+        }
+        
+        func webView(
+            _ webView: WKWebView,
+            decidePolicyFor navigationAction: WKNavigationAction,
+            decisionHandler: @escaping (WKNavigationActionPolicy) -> Void)
+        {
+            os_log("[WebView] - call javascript open scheme (내부호출)")
+            if let url = navigationAction.request.url {
+//                os_log("[WebView] - url: %d", url)
+                print(url)
+                if let scheme = url.scheme {
+                    os_log("[WebView] - scheme: %d", scheme)
+                }
+//                if  url.scheme == "kakaolink" {
+//                    os_log("[WebView] - Kakao | execute kakao link")
+//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                    decisionHandler(.cancel)
+//                    return
+//                } else if url.scheme == "tel" {
+//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                }
+            }
+
+            // 서비스 상황에 맞는 나머지 로직을 구현합니다.
+//            decisionHandler(.allow)
+        }
+
+        
+    }
 }
 
 struct WebView_Preview: PreviewProvider {
     static var previews: some View {
-        WebView(url: Constants.MAIN_URL)
+        WebView()
     }
 }
