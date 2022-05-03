@@ -10,7 +10,6 @@ import AVFoundation
 
 class CameraService: NSObject {
     
-    
     func requestCameraAuthorization() {
         AVCaptureDevice.requestAccess(for: .video, completionHandler: {
             authorized in

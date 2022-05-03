@@ -55,4 +55,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         print(error)
     }
     
+    func getLocationStatus() -> CLAuthorizationStatus {
+        return self.manager.authorizationStatus
+    }
 }

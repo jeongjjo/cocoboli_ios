@@ -12,12 +12,18 @@ class WebviewController: UIViewController {
 
     var webviews = [WKWebView]()
 
+    let locationService = LocationService()
+    let cameraService = CameraService()
+    let albumService = AlbumService()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let host = URL(string: Constants.MAIN_URL)
         let webConfiguration = WKWebViewConfiguration()
         let contentController = WKUserContentController()
+        
+        contentController.add(self, name: "location")
 
         webConfiguration.userContentController = contentController
         webConfiguration.defaultWebpagePreferences.allowsContentJavaScript = true
@@ -52,5 +58,17 @@ class WebviewController: UIViewController {
         let jsonData = try! JSONSerialization.data(withJSONObject: obj, options: [])
         return String(data: jsonData, encoding: .utf8)!
     }
+    
+    func requestAndSendLocation() {
+        locationService.requestLocation { coordinate in
+            let lat         = coordinate.latitude.description
+            let lng         = coordinate.longitude.description
+            let position    = ["lat": lat, "lng": lng]
+            let stringData  = self.objectToString(object: position)
+            
+            print("location data", stringData)
 
+            self.webviews[0].evaluateJavaScript("currentLocation(\(stringData))")
+        }
+    }
 }
