@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F5498FF2836202B000B02C0 /* MicrophoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5498FE2836202B000B02C0 /* MicrophoneService.swift */; };
 		3F782F4F280BCA4800B0D24E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F782F4E280BCA4800B0D24E /* ViewController.swift */; };
 		3F782F51280BCAF500B0D24E /* WebviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F782F50280BCAF500B0D24E /* WebviewController.swift */; };
 		3F782F53280BCC5200B0D24E /* WebviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F782F52280BCC5200B0D24E /* WebviewHandler.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F5498FE2836202B000B02C0 /* MicrophoneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneService.swift; sourceTree = "<group>"; };
 		3F782F4E280BCA4800B0D24E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		3F782F50280BCAF500B0D24E /* WebviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewController.swift; sourceTree = "<group>"; };
 		3F782F52280BCC5200B0D24E /* WebviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewHandler.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				3FF3CD0527DA196200FCBEA3 /* Assets.xcassets */,
 				3FF3CD0727DA196200FCBEA3 /* Preview Content */,
 				3FF3CD1127DA19B100FCBEA3 /* Constants.swift */,
+				3F5498FE2836202B000B02C0 /* MicrophoneService.swift */,
 				3FF3CD1327DA19C200FCBEA3 /* LocationService.swift */,
 				3FCCDE9F27FB28B000C9150B /* CameraService.swift */,
 				3FCCDEA127FB292800C9150B /* AlbumService.swift */,
@@ -165,6 +168,7 @@
 				3FCCDEA227FB292800C9150B /* AlbumService.swift in Sources */,
 				3FF3CD1427DA19C200FCBEA3 /* LocationService.swift in Sources */,
 				3FF3CD0227DA196100FCBEA3 /* cocoboli_iosApp.swift in Sources */,
+				3F5498FF2836202B000B02C0 /* MicrophoneService.swift in Sources */,
 				3F782F53280BCC5200B0D24E /* WebviewHandler.swift in Sources */,
 				3F782F4F280BCA4800B0D24E /* ViewController.swift in Sources */,
 				3F782F51280BCAF500B0D24E /* WebviewController.swift in Sources */,
@@ -297,7 +301,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"cocoboli.ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 8H98BAH7HL;
 				ENABLE_PREVIEWS = YES;
@@ -305,8 +309,10 @@
 				INFOPLIST_FILE = "cocoboli-ios-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "코코보리";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 및 일반 사진촬영을 위해 사진촬영 권한이 필요합니다.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진, 동영상 촬영, 카페 촬영등을 위해서는 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자에게 알맞는 매장 및 서비스 정보를 제공하기 위해서는 위치정보가 필요합니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "호텔, 카페 등 애견장소의 동영상을 촬영하기 위해서 음성권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 및 동영상의 저장된 정보를 불러와서 리뷰 및 프로필에 사용하기 위해서 저장공간의 접속 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 등록, 카페 및 일반 정보 등록을 위해 앨범 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -320,7 +326,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.punky.tails.cocoboli-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -335,7 +341,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"cocoboli.ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 8H98BAH7HL;
 				ENABLE_PREVIEWS = YES;
@@ -343,8 +349,10 @@
 				INFOPLIST_FILE = "cocoboli-ios-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "코코보리";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 및 일반 사진촬영을 위해 사진촬영 권한이 필요합니다.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진, 동영상 촬영, 카페 촬영등을 위해서는 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자에게 알맞는 매장 및 서비스 정보를 제공하기 위해서는 위치정보가 필요합니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "호텔, 카페 등 애견장소의 동영상을 촬영하기 위해서 음성권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 및 동영상의 저장된 정보를 불러와서 리뷰 및 프로필에 사용하기 위해서 저장공간의 접속 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 등록, 카페 및 일반 정보 등록을 위해 앨범 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -358,7 +366,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.punky.tails.cocoboli-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

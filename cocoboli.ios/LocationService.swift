@@ -11,6 +11,7 @@ import CoreLocation
 class LocationService: NSObject, CLLocationManagerDelegate {
     
     private let manager = CLLocationManager()
+    
     var completionHandler: ((CLLocationCoordinate2D) -> (Void))?
        
     override init() {

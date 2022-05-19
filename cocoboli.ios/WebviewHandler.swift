@@ -18,6 +18,7 @@ extension WebviewController: WKNavigationDelegate, WKUIDelegate, WKScriptMessage
         let name = message.name
         
         if name.isEqual("location") {
+            print("call location method")
             let status = locationService.getLocationStatus()
             
             if status == .denied || status == .restricted {
@@ -55,6 +56,7 @@ extension WebviewController: WKNavigationDelegate, WKUIDelegate, WKScriptMessage
                 
         cameraService.requestCameraAuthorization()
         albumService.requestAlbumAuthorization()
+        micService.requestMicrophone()
     }
 
     /**

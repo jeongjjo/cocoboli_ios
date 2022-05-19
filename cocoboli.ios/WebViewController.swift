@@ -15,6 +15,7 @@ class WebviewController: UIViewController {
     let locationService = LocationService()
     let cameraService = CameraService()
     let albumService = AlbumService()
+    let micService = MicrophoneService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,8 +67,8 @@ class WebviewController: UIViewController {
             let position    = ["lat": lat, "lng": lng]
             let stringData  = self.objectToString(object: position)
             
-            print("location data", stringData)
-
+            print("location", stringData)
+            
             self.webviews[0].evaluateJavaScript("currentLocation(\(stringData))")
         }
     }

@@ -16,7 +16,10 @@ struct ViewController: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        
+        let status = webviewController.locationService.getLocationStatus()
+        print("update ui view controller")
+        if status != .authorizedAlways && status != .authorizedWhenInUse {
+            webviewController.requestAndSendLocation()
+        }
     }
-    
 }
